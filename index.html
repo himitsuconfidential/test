@@ -45,5 +45,20 @@
     
     
     <script src="index.js"></script>
+    <script>
+        let lastTap = 0;
+const modal = document.getElementById('modal');
+const modalBackground = modal.querySelector('.modal-background');
+
+modalBackground.addEventListener('touchend', function(e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    if (tapLength < 500 && tapLength > 0) {
+        closeModal();
+        e.preventDefault();
+    }
+    lastTap = currentTime;
+});
+    </script>
 </body>
 </html>
