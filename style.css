@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 70px;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3498db;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-nav {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+.page-nav input, .page-nav button {
+    border: none;
+    background-color: #fff;
+    color: #3498db;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.page-nav button {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.page-nav button:hover {
+    background-color: #f0f0f0;
+}
+.page-nav span {
+    color: #fff;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.filters input {
+    width: 200px; /* Set a specific width for the input boxes */
+    padding: 10px 15px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.filters input:focus {
+    border-color: #3498db;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+#apply-filters, #download-csv {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Add some space between buttons */
+}
+#apply-filters:hover, #download-csv:hover {
+    background-color: #27ae60;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    overflow-x: auto;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+    border-right: 1px solid #ecf0f1;
+}
+th:last-child, td:last-child {
+    border-right: none;
+}
+th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:hover {
+    background-color: #f5f7fa;
+}
+@media (hover: none) {
+  tr:active {
+    background-color: #e6f3ff;
+  }
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 50px auto; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 80%; 
+    max-width: 800px;
+    position: relative;
+    z-index: 1002;
+}
+
+/* Add this new rule */
+.modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .modal::before {
+        cursor: pointer;
+    }
+}
+#record-details {
+    margin-bottom: 20px;
+}
+#more-price-data-table {
+    display: table;
+    border-radius: 0px;
+}
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .page-nav {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .page-nav input, .page-nav button {
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .filters input {
+        width: calc(100% - 20px);
+    }
+
+    .filter-actions {
+        flex-direction: column;
+    }
+
+    #apply-filters, #download-csv {
+        width: calc(100% - 20px);
+    }
+}
