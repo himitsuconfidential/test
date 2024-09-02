@@ -46,10 +46,12 @@
     
     <script src="index.js"></script>
     <script>
-document.querySelector('#modal').addEventListener('touchend', function(e) {
-        closeModal();
-        e.preventDefault();
-});
+window.onclick = function(event) {
+    var modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
     </script>
 </body>
 </html>
