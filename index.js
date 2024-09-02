@@ -126,11 +126,13 @@ function downloadCSV() {
 function showDetails(row) {
     console.log('showing details')
     var cells = row.getElementsByTagName("td");
+    var locationMapping = {"HKG":"香港HKG", "NRT":"東京NRT", "HND":"東京HND"}
     var baggageMapping = {"YesYes": "Both checked baggage and carry on baggage", "YesNo": "Only checked baggage", "NoYes": "Only carry on baggage", "NoNo": "No baggage"}
     var baggageString = baggageMapping[cells[10].innerHTML + cells[11].innerHTML]
     var details = 
     `<p>Time: ${cells[1].innerHTML} ${cells[5].innerHTML} → ${cells[6].innerHTML} (Totally ${cells[7].innerHTML})</p>
-    <p>Location: ${cells[8].innerHTML} → ${cells[9].innerHTML}</p>
+    <p>Location: ${locationMapping[cells[8].innerHTML]} → ${locationMapping[cells[9].innerHTML]}</p>
+    <p>Airline: ${cells[2].innerHTML} (${cells[3].innerHTML})</p>
     <p>Baggage policy: ${baggageString}</p>`;
 
     var morePriceData = ``
@@ -163,10 +165,15 @@ function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
 
-// Close the modal when clicking outside of it
+// Close the modal when clicking or tapping outside of it
 window.onclick = function(event) {
-    var modal = document.getElementById("modal");
+    var modal = document.getElementById("modaal");
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
+
+document.querySelector('#modal').addEventListener('touchend', function(e) {
+        closeModal();
+        e.preventDefault();
+});
