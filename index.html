@@ -46,17 +46,9 @@
     
     <script src="index.js"></script>
     <script>
-        let lastTap = 0;
-const modalBackground = document.querySelector('#modal')
-
-modalBackground.addEventListener('touchend', function(e) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
-    
+document.querySelector('#modal').addEventListener('touchend', function(e) {
         closeModal();
         e.preventDefault();
-    
-    lastTap = currentTime;
 });
     </script>
 </body>
