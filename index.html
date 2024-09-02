@@ -47,8 +47,7 @@
     <script src="index.js"></script>
     <script>
         let lastTap = 0;
-const modal = document.getElementById('modal');
-const modalBackground = modal.querySelector('.modal-background');
+const modalBackground = document.querySelector('#modal')
 
 modalBackground.addEventListener('touchend', function(e) {
     const currentTime = new Date().getTime();
