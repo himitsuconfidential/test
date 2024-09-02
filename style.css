@@ -128,7 +128,6 @@ tr:hover {
     overflow: auto; 
     background-color: rgba(0,0,0,0.6); 
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: 50px auto; 
@@ -137,25 +136,19 @@ tr:hover {
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     width: 80%; 
     max-width: 800px;
-    position: relative;
-    z-index: 1002;
 }
-
-/* Add this new rule */
-.modal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1001;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
-
-@media (max-width: 768px) {
-    .modal::before {
-        cursor: pointer;
-    }
+.close:hover,
+.close:focus {
+    color: #2c3e50;
+    text-decoration: none;
+    cursor: pointer;
 }
 #record-details {
     margin-bottom: 20px;
@@ -195,17 +188,4 @@ tr:hover {
     #apply-filters, #download-csv {
         width: calc(100% - 20px);
     }
-}
-.modal-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.modal-content {
-    position: relative;
-    z-index: 1;
-    /* ... existing styles ... */
 }
