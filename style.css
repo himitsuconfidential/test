@@ -200,7 +200,3 @@ tr:hover {
         width: calc(100% - 20px);
     }
 }
-
-#current-page {
-    width: 60px; /* Adjust the width as needed */ /* Adjust the height as needed */   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add box shadow */
-}
