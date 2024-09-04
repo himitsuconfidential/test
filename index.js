@@ -167,13 +167,15 @@ function closeModal() {
 
 // Close the modal when clicking or tapping outside of it
 window.onclick = function(event) {
-    var modal = document.getElementById("modaal");
+    var modal = document.getElementById("modal");
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
-document.querySelector('#modal').addEventListener('touchend', function(e) {
-        closeModal();
-        e.preventDefault();
+document.addEventListener('touchend', function(event) {
+    var modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 });
